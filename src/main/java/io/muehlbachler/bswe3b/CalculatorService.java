@@ -1,7 +1,10 @@
 package io.muehlbachler.bswe3b;
 
+import org.springframework.stereotype.Service;
+
 // FIXME: add javadoc
-public class Calculator {
+@Service
+public class CalculatorService {
     // FIXME: add javadoc
     public int divide(final int a, final int b) {
         // FIXME: implement
