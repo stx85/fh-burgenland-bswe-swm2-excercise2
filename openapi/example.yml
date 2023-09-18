@@ -1,0 +1,55 @@
+---
+openapi: 3.0.3
+info:
+  title: String Case Converter
+  description: |-
+    This service converts strings to either upper or lower case ones.
+  version: 1.0.0
+tags:
+  - name: string
+    description: Modification of strings.
+paths:
+  /upper:
+    get:
+      tags:
+        - string
+      summary: Convert a string to upper case.
+      description: Converts a given string as a GET parameter to upper case.
+      operationId: convertToUpper
+      parameters:
+        - name: text
+          in: query
+          required: true
+          schema:
+            type: string
+          example: to be converted to upper case
+      responses:
+        '200':
+          description: Successful operation.
+          content:
+            text/plan:
+              schema:
+                type: string
+              example: TO BE CONVERTED TO UPPER CASE
+  /lower/{text}:
+    get:
+      tags:
+        - string
+      summary: Convert a string to lower case.
+      description: Converts a given string as a GET parameter to lower case.
+      operationId: convertToLower
+      parameters:
+        - name: text
+          in: path
+          required: true
+          schema:
+            type: string
+          example: to BE converted TO lower CASE
+      responses:
+        '200':
+          description: Successful operation.
+          content:
+            text/plan:
+              schema:
+                type: string
+              example: to be converted to lower case
