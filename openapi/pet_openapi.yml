@@ -1,0 +1,33 @@
+---
+openapi: 3.0.3
+info:
+  title: PET Program
+  description: |-
+    This service performs string operations
+  version: 1.0.0
+tags:
+  - name: pet
+    description: Basic string operations.
+paths:
+  /upper:
+    get:
+      tags:
+        - pet
+      summary: convert string to upper case
+      description: convert string to upper case
+      operationId: upper
+      parameters:
+        - name: string
+          in: query
+          required: true
+          schema:
+            type: string
+          example: servus
+      responses:
+        '200':
+          description: Successful operation.
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: SERVUS
